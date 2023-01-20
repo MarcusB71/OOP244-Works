@@ -3,6 +3,18 @@
 using namespace std;
 using namespace sdds;
 
+// flushes the keyboard
+void flushkeys() {
+   while (cin.get() != '\n');
+}
+
+// returns true if user enter y or Y
+bool yes() {
+   char ch = cin.get();
+   flushkeys();
+   return ch == 'y' || ch == 'Y';
+}
+
 int main() {
    bool done = false;
    char genre[128];
@@ -19,16 +31,4 @@ int main() {
    }
    cout << "Goodbye!" << endl;
    return 0;
-}
-
-// flushes the keyboard
-void flushkeys() {
-   while (cin.get() != '\n');
-}
-
-// returns true if user enter y or Y
-bool yes() {
-   char ch = cin.get();
-   flushkeys();
-   return ch == 'y' || ch == 'Y';
 }
