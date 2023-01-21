@@ -1,6 +1,8 @@
 #ifndef SDDS_MOVIE_H
 #define SDDS_MOVIE_H
 #include "File.h"
+#include <cstring>
+#include <cstdio>
 namespace sdds {
     struct Movie {
    char m_title[128];
@@ -10,7 +12,7 @@ namespace sdds {
    char m_genres[10][11];
    float m_consumerRating;
 };
-    Movie movies[50];
+    // Movie movies[50];
     bool loadMovies();
     bool hasGenre(const Movie* mvp, const char genre[]);
     void displayMovie(const Movie* mvp);

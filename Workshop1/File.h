@@ -1,8 +1,10 @@
 #ifndef SDDS_FILE_H
 #define SDDS_FILE_H
 #include <stdio.h>
+#include <cstring>
+#include <cstdio>
 namespace sdds {
-    FILE* fptr;  
+    // FILE* fptr;  
 bool openFile(const char filename[]);
 void closeFile();
 bool readTitle(char title[]);

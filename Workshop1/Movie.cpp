@@ -2,9 +2,11 @@
 #include <iostream>
 #include "Movie.h"
 #include "File.h"
+
 using namespace std;
 namespace sdds{
 
+ Movie movies[50];
 // loads all the moves into the global array of structures.
 bool loadMovies() {
    Movie mv;

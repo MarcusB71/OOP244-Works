@@ -3,8 +3,10 @@
 #include <stdio.h>
 #include "File.h"
 #include "Movie.h"
+
 using namespace std;
 namespace sdds {
+FILE* fptr;  
 // opens the data file and returns true is successful
 bool openFile(const char filename[]) {
    fptr = fopen(filename, "r");
