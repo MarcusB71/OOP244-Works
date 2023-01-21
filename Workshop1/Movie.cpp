@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "Movie.h"
 #include <iostream>
+#include "Movie.h"
+#include "File.h"
 using namespace std;
 namespace sdds{
 

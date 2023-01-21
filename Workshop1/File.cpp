@@ -1,6 +1,9 @@
-#include "File.h"
-#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <stdio.h>
+#include "File.h"
+#include "Movie.h"
+using namespace std;
 namespace sdds {
 // opens the data file and returns true is successful
 bool openFile(const char filename[]) {
