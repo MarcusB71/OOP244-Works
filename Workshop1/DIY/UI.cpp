@@ -68,7 +68,6 @@ namespace sdds
                 cin >> op;
                 if (strcmp(op, "y") == 0 || strcmp(op, "Y") == 0)
                 {
-                    cout << "Goodbye!";
                     finished = 1;
                 }
             }
