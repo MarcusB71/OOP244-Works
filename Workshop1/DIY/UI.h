@@ -3,6 +3,6 @@
 #include "File.h"
 namespace sdds
 {
-    void promptUser();
+    void promptUser(struct GPA gpas[]);
 }
 #endif

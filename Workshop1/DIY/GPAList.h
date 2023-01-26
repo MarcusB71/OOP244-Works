@@ -5,9 +5,9 @@ using namespace std;
 namespace sdds
 {
     bool gpaQuery(const char *filename);
-    bool matchGPA(const GPA *studentGPA, const char op[], double value);
+    bool matchGPA(struct GPA *studentGPA, const char op[], double value);
     void displayMatchingGPAS(const char op[], double value);
     void displayGPA(const GPA *studentGPA);
-    void promptUser();
+    void sortData(struct GPA *studentGPA, int gpaNum);
 }
 #endif

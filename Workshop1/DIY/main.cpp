@@ -18,7 +18,6 @@ using namespace sdds;
 int main()
 {
 	gpaQuery("students.csv");
-	promptUser();
 	// if (gpaQuery("std.csv"))
 	// {
 	// 	std::cout << "This should have failed!" << std::endl;

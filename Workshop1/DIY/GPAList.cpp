@@ -1,7 +1,5 @@
 #include "GPAList.h"
 #include <iostream>
-#include <cstring>
-
 using namespace std;
 namespace sdds
 {
@@ -27,11 +25,31 @@ namespace sdds
                 }
             }
             closeFile();
+            promptUser(gpas);
         }
         return gpaNum == 86;
     }
-
-    bool matchGPA(const GPA *studentGPA, const char op[], double value)
+    void sortData(struct GPA *studentGPA, int gpaNum)
+    {
+        int i = 0, j = 0;
+        struct GPA gpaHolder;
+        for (i = 0; i < gpaNum; i++)
+        {
+            if (studentGPA[i].stno)
+            {
+                for (j = 0; j < gpaNum - i - 1; j++)
+                {
+                    if (studentGPA[j].stno > studentGPA[j + 1].stno)
+                    {
+                        gpaHolder = studentGPA[j];
+                        studentGPA[j] = studentGPA[j + 1];
+                        studentGPA[j + 1] = gpaHolder;
+                    }
+                }
+            }
+        }
+    }
+    bool matchGPA(struct GPA *studentGPA, const char op[], double value)
     {
         bool found = false;
 

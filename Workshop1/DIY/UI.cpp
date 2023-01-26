@@ -1,24 +1,37 @@
 #include "UI.h"
 #include <iostream>
-#include <cstring>
-// #include <sstream>
+#include <string>
 using namespace std;
 namespace sdds
 {
-    void promptUser()
+    void promptUser(struct GPA gpas[])
     {
         char op[20];
-        // string input;
+        char tempString[20];
         double value = 0.0;
         int finished = 0;
+        sortData(gpas, 86);
         cout << "Enter GPA query..." << endl;
         cout << "? ";
-        cin >> op >> value;
-        // cin >> input;
-        // stringstream ss(input);
-        // ss >> op;
-        // ss.ignore();
-        // ss >> value;
+
+        cin >> tempString;
+        op[0] = tempString[0];
+        op[1] = '\0';
+        if (tempString[3])
+        {
+            tempString[0] = tempString[1];
+            tempString[1] = tempString[2];
+            tempString[2] = tempString[3];
+            tempString[3] = '\0';
+            value = stod(tempString);
+        }
+        else if (tempString[1])
+        {
+            tempString[0] = tempString[1];
+            tempString[1] = '\0';
+            value = stod(tempString);
+        }
+        strcpy(tempString, "");
 
         while (!finished)
         {
@@ -29,11 +42,25 @@ namespace sdds
                 cout << "value: GPA value" << endl;
                 cout << endl;
                 cout << "? ";
-                cin >> op >> value;
-                // cin >> input;
-                // ss >> op;
-                // ss.ignore();
-                // ss >> value;
+                cin >> tempString;
+
+                op[0] = tempString[0];
+                op[1] = '\0';
+                if (tempString[3])
+                {
+                    tempString[0] = tempString[1];
+                    tempString[1] = tempString[2];
+                    tempString[2] = tempString[3];
+                    tempString[3] = '\0';
+                    value = stod(tempString);
+                }
+                else if (tempString[1])
+                {
+                    tempString[0] = tempString[1];
+                    tempString[1] = '\0';
+                    value = stod(tempString);
+                }
+                strcpy(tempString, "");
             }
             if (strcmp(op, "!") == 0)
             {
@@ -49,9 +76,26 @@ namespace sdds
             {
                 displayMatchingGPAS(op, value);
                 cout << "? ";
-                cin >> op >> value;
+                cin >> tempString;
+
+                op[0] = tempString[0];
+                op[1] = '\0';
+                if (tempString[3])
+                {
+                    tempString[0] = tempString[1];
+                    tempString[1] = tempString[2];
+                    tempString[2] = tempString[3];
+                    tempString[3] = '\0';
+                    value = stod(tempString);
+                }
+                else if (tempString[1])
+                {
+                    tempString[0] = tempString[1];
+                    tempString[1] = '\0';
+                    value = stod(tempString);
+                }
+                strcpy(tempString, "");
             }
         }
     }
-
 }
