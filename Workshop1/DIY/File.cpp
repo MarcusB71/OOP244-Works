@@ -31,13 +31,13 @@ namespace sdds
    // returns true if successful
    bool readStno(int *stno)
    {
-      return fscanf(fptr, "%d,", stno) == 1; // might need to pass &stno by address
+      return fscanf(fptr, "%d,", stno) == 1;
    }
 
    // reads the gpa of the GPA struct from the global fptr File pointer
    // returns true if successful
    bool readGPA(double *gpa)
    {
-      return fscanf(fptr, "%lf\n", gpa) == 1; // might need to pass &gpa by address
+      return fscanf(fptr, "%lf\n", gpa) == 1;
    }
 }

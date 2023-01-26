@@ -79,7 +79,12 @@ namespace sdds
 
     void displayGPA(const GPA *studentGPA)
     {
-        cout << studentGPA->stno << ": " << studentGPA->gpa << " (" << studentGPA->name << ")" << endl;
+        cout << studentGPA->stno << ": " << studentGPA->gpa;
+        if (studentGPA->gpa == 1 || studentGPA->gpa == 2 || studentGPA->gpa == 3 || studentGPA->gpa == 4)
+        {
+            cout << ".0";
+        }
+        cout << " (" << studentGPA->name << ")" << endl;
     }
 
     void displayMatchingGPAS(const char op[], double value)

@@ -38,7 +38,7 @@ namespace sdds
             if (strcmp(op, ">") != 0 && strcmp(op, "<") != 0 && strcmp(op, "~") != 0 && strcmp(op, "!") != 0)
             {
                 cout << "Syntax error: ? [Op][value]<ENTER>" << endl;
-                cout << "Op:[>,<,~,!]" << endl;
+                cout << "Op: [>,<,~,!]" << endl;
                 cout << "value: GPA value" << endl;
                 cout << endl;
                 cout << "? ";
