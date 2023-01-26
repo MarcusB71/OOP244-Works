@@ -1,4 +1,4 @@
-#include "GPAList.h"
+#include "GPAlist.h"
 #include <iostream>
 using namespace std;
 namespace sdds
