@@ -1,7 +1,7 @@
 #ifndef SDDS_FILE_H
 #define SDDS_FILE_H
 #include "GPA.h"
-#include "GPAList.h"
+#include "GPAlist.h"
 #include "UI.h"
 #include <stdio.h>
 #include <cstring>
