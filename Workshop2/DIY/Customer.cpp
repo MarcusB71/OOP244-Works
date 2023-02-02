@@ -76,8 +76,8 @@ namespace sdds
         {
             cout << i + 1 << ". ";
             display(t_rec.ptr_rec[i]);
+            cout << endl;
         }
-        cout << endl;
     }
 
 }
