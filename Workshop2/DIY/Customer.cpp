@@ -27,19 +27,19 @@ namespace sdds
     }
     bool read(Customers &rec)
     {
-        cout << "Enter User name: ";
+        cout << " Enter User name: ";
         read(rec.user_name, 21);
         if (strcmp(rec.user_name, "") == 0)
         {
             return false;
         }
-        cout << "Enter likes_count: ";
+        cout << " Enter likes_count: ";
         cin >> rec.likes_count;
-        cout << "Enter retweets_count: ";
+        cout << " Enter retweets_count: ";
         cin >> rec.retweets_count;
-        cout << "Enter replies_count: ";
+        cout << " Enter replies_count: ";
         cin >> rec.replies_count;
-        cout << "Enter share videos (y/n): ";
+        cout << " Enter share videos (y/n): ";
         cin >> rec.share_videos;
         return true;
     }
@@ -77,6 +77,7 @@ namespace sdds
             cout << i + 1 << ". ";
             display(t_rec.ptr_rec[i]);
         }
+        cout << endl;
     }
 
 }
