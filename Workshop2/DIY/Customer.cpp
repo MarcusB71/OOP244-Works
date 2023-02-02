@@ -61,7 +61,7 @@ namespace sdds
             delete[] t_rec.ptr_rec;
             t_rec.ptr_rec = nullptr;
             t_rec.ptr_rec = tempCustomer;
-            delete[] tempCustomer;
+            // delete[] tempCustomer;
         }
 
         t_rec.noOfRecords++;
