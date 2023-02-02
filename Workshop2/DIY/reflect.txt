@@ -1,0 +1,8 @@
+I became much more comfortable with pointers in this workshop. Specifically, about how they work within function parameters. That 
+being said, I am still not as comfortable as I would like to be. In part 2 of this workshop, most of the logic was straightforward
+other than the addCustomer() function. The part where I had to create a temporary customer struct was a bit of a sticking 
+point as i did not know that I had to initialize it as a pointer. I learned that when using the new keyword to Dynamically
+allocate memory to a struct, the struct must be initialized as a pointer. Being provided most of the function prototypes was definitely
+helpful and will be a useful reference for future workshops, but it is because I did not have to create them myself that I still feel
+somewaht unconfident with pointers in function parameters. Additionally, I have learned how to deallocate with dynamic memory and setting
+them to nullptr.
