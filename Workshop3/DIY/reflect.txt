@@ -1,0 +1,7 @@
+In this workshop I have learned a lot about classes. While there were a few obstacles, using classes has its upsides as 
+member variables/data members are accessible through the member functions and dont have to be placed in the parameters of
+a function each time it needs to be accessed. Some of the obstacles I encountered included the constructor and destructor functions which 
+are inherit in classes. At first I tried to use the constructor function in place of my setEmpty function, but then realized 
+that it would create a new instance each time. This taught me the difference between the setEmpty function and the constructor
+function with regards to setting a safe state. private data members meant I had to create member functions in order to access them, 
+but overall working with classes is more enjoyable than managing pointers and passing references everywhere.
