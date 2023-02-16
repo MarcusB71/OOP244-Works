@@ -85,7 +85,7 @@ namespace sdds
                             cin.ignore(10000, '\n');
                             if (cin.fail() || !phoneExt)
                             {
-                                cout << "Bad integer, try again: ";
+                                cout << "Bad integer value, try again: ";
                                 extProblem = true;
                             }
                             else if (phoneExt > MAX_EXT_VALUE || phoneExt < MIN_EXT_VALUE)
