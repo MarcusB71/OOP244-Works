@@ -1,0 +1,6 @@
+This workshop was somewhat frustrating. For the lab there were issues when submitting as the file name and #includes
+needed to be changed, there were also many getter functions that I had to create in order to acces the private member variables.
+As for the DIY, or part 2, the formating of the print function was extremely tedious and the instructions were not clear.
+For example, the border was not to be included in the 20 space count, which took up a lot of my time.
+While I did learn more about cout methods, It was somewhat overcomplicated in my opinion. Throughout this workshop I 
+have solidified my understanding of DMA, classes, constructor/destructor, and the current object. 
