@@ -56,7 +56,11 @@ namespace sdds
         cin.get(tempName, 41, '\n');
         cin.clear();
         cin.ignore(10000, '\n');
-        setEmpty();
+        if (m_name)
+        {
+            delete[] m_name;
+        }
+        m_name = nullptr;
         m_name = new char[strlen(tempName) + 1];
         strcpy(m_name, tempName);
         if (m_name == nullptr || m_name[0] == '\0')
