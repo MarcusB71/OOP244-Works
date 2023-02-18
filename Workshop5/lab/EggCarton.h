@@ -1,16 +1,17 @@
 #ifndef SDDS_EGGCARTON_H
 #define SDDS_EGGCARTON_H
 #include <iostream>
+using namespace std;
 namespace sdds
 {
+    const int RegularEggWieght = 50; // grams
+    const int JumboEggWieght = 75;   // grams
     class EggCarton
     {
     private:
         int m_size;
         int m_noOfEggs;
         bool m_jumboSize;
-        const int RegularEggWieght = 50; // grams
-        const int JumboEggWieght = 75;   // grams
         EggCarton &setBroken(int size, int noOfEggs);
         ostream &displayCarton(int size, int noOfEggs, bool jumboSize, ostream &ostr = cout) const;
 
@@ -26,7 +27,7 @@ namespace sdds
         EggCarton operator--(int); // postfix
         EggCarton &operator++();
         EggCarton operator++(int); // postfix
-        EggCarton &EggCarton::operator=(EggCarton &right);
+        // EggCarton &EggCarton::operator=(EggCarton &right);
         EggCarton &operator=(int value);
         EggCarton &operator+=(int value);
         EggCarton &operator+=(EggCarton &right);
