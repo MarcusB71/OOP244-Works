@@ -17,7 +17,7 @@ namespace sdds
 
     public:
         EggCarton(int size = 6, int noOfEggs = 0, bool jumboSize = false);
-        // ~EggCarton();
+        ~EggCarton();
         ostream &display(ostream &ostr = cout) const;
         istream &read(istream &istr = cin);
         operator bool() const;
