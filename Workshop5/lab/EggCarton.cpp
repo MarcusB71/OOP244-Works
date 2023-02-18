@@ -200,7 +200,5 @@ namespace sdds
         right.read(istr);
         return istr;
     }
-    EggCarton::~EggCarton()
-    {
-    }
+
 }
