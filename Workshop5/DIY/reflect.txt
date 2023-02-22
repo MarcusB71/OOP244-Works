@@ -1,0 +1,11 @@
+The challenge in this workshop came from the lab as it was the first time dealing with operator overloading. 
+The DIY on the other hand was quite easy as it was pretty much the same as the lab. Some of the obstacles i 
+encountered in the lab included the need for using namespace std in the header file as without this my compiler
+was unable to understand the << and >> operator overload functions. This gave me problems for quite some time,
+but was a learning experience. With this lab i have gotten much better at understanding how to set up functions to 
+return a reference to an object such as ostream or the class object. I guess another obstacle which was somewhat silly,
+but still a learning expereience was that I had put my default values of ostr = cout in the header file and then copied
+the prototype to the cpp file without removing the default value. Additionally, I should note that while i believe
+I have the correct output for my lab, I have not submitted it yet because matrix is telling me I have memory leak issue
+even though I havent used DMA in this workshop and so I have set up a meeting with the prof to discuss this. Overall,
+finding my ability and understanding of what I am doing is getting much better.
