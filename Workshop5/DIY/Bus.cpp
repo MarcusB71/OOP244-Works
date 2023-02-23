@@ -82,6 +82,10 @@ namespace sdds
         }
         return istr;
     }
+    int Bus::getNumPass() const
+    {
+        return m_numPassenger;
+    }
     Bus::operator bool() const
     {
         return m_numSeats > 0;
@@ -180,7 +184,7 @@ namespace sdds
         int sum = 0;
         if (bool(right))
         {
-            sum = left + right;
+            sum = left + right.getNumPass();
             return sum;
         }
         else

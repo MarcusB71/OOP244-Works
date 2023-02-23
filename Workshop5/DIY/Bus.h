@@ -24,6 +24,7 @@ namespace sdds
         void setOutOfService();
         ostream &display(ostream &ostr = cout) const;
         istream &read(istream &istr = cin);
+        int getNumPass() const;
         operator bool() const;
         operator int() const;
         operator double() const;
