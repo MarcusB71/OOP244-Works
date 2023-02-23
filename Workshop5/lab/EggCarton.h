@@ -1,7 +1,6 @@
 #ifndef SDDS_EGGCARTON_H
 #define SDDS_EGGCARTON_H
 #include <iostream>
-using namespace std;
 namespace sdds
 {
     const int RegularEggWieght = 50; // grams
@@ -13,13 +12,13 @@ namespace sdds
         int m_noOfEggs;
         bool m_jumboSize;
         EggCarton &setBroken(int size, int noOfEggs);
-        ostream &displayCarton(int size, int noOfEggs, bool jumboSize, ostream &ostr = cout) const;
+        std::ostream &displayCarton(int size, int noOfEggs, bool jumboSize, std::ostream &ostr = std::cout) const;
 
     public:
         EggCarton(int size = 6, int noOfEggs = 0, bool jumboSize = false);
         ~EggCarton();
-        ostream &display(ostream &ostr = cout) const;
-        istream &read(istream &istr = cin);
+        std::ostream &display(std::ostream &ostr = std::cout) const;
+        std::istream &read(std::istream &istr = std::cin);
         operator bool() const;
         operator int() const;
         operator double() const;
@@ -34,7 +33,7 @@ namespace sdds
         bool operator==(const EggCarton &right) const;
     };
     int operator+(int left, const EggCarton &right);
-    ostream &operator<<(ostream &ostr, const EggCarton &right);
-    istream &operator>>(istream &istr, EggCarton &right);
+    std::ostream &operator<<(std::ostream &ostr, const EggCarton &right);
+    std::istream &operator>>(std::istream &istr, EggCarton &right);
 }
 #endif

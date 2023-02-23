@@ -25,7 +25,7 @@ namespace sdds
     }
     ostream &EggCarton::display(ostream &ostr) const
     {
-        if (bool(*this))
+        if (*this)
         {
             displayCarton(m_size, m_noOfEggs, m_jumboSize, ostr);
         }
@@ -77,8 +77,8 @@ namespace sdds
     }
     EggCarton::operator double() const
     {
-        double total = 0.0;
-        if (bool(*this))
+        double total = -1;
+        if (*this)
         {
             if (m_jumboSize)
             {
@@ -88,13 +88,12 @@ namespace sdds
             {
                 total = (m_noOfEggs * RegularEggWieght) / 1000.0;
             }
-            return total;
         }
-        return -1;
+        return total;
     }
     EggCarton &EggCarton::operator--()
     {
-        if (bool(*this) && m_noOfEggs > 0)
+        if (*this && m_noOfEggs > 0)
         {
             m_noOfEggs--;
         }
@@ -108,7 +107,7 @@ namespace sdds
     } // postfix
     EggCarton &EggCarton::operator++()
     {
-        if (bool(*this))
+        if (*this)
         {
             m_noOfEggs++;
             if (m_noOfEggs > m_size)
@@ -143,7 +142,7 @@ namespace sdds
     // }
     EggCarton &EggCarton::operator+=(int value)
     {
-        if (bool(*this))
+        if (*this)
         {
             m_noOfEggs += value;
             if (m_noOfEggs > m_size)
@@ -153,9 +152,9 @@ namespace sdds
         }
         return *this;
     }
-    EggCarton &EggCarton::operator+=(EggCarton &right) // maybe fix this too
+    EggCarton& EggCarton::operator+=(EggCarton& right) // maybe fix this too
     {
-        if (bool(*this))
+        if (*this)
         {
             int leftSpots = m_size - m_noOfEggs;
             while (leftSpots != 0 && right.m_noOfEggs != 0)
@@ -167,35 +166,31 @@ namespace sdds
         }
         return *this;
     }
-    bool EggCarton::operator==(const EggCarton &right) const // fix this function
+    bool EggCarton::operator==(const EggCarton& right) const // fix this function
     {
         double difference = double(m_jumboSize) - double(right.m_jumboSize);
-        if (difference >= -0.001 && difference <= 0.001)
-        {
-            return false;
-        }
-        return true;
+        return  !(difference >= -0.001 && difference <= 0.001);
     }
+
     int operator+(int left, const EggCarton &right)
     {
         int sum = 0;
-        if (bool(right))
+        if (right)
         {
-            sum = left + right;
-            return sum;
+            sum = left + int(right);
         }
         else
         {
             sum = left;
-            return sum;
         }
+        return sum;
     }
-    ostream &operator<<(ostream &ostr, const EggCarton &right)
+    ostream& operator<<(ostream& ostr, const EggCarton &right)
     {
         right.display(ostr);
         return ostr;
     }
-    istream &operator>>(istream &istr, EggCarton &right)
+    istream& operator>>(istream& istr, EggCarton &right)
     {
         right.read(istr);
         return istr;
