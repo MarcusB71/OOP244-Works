@@ -25,7 +25,7 @@ namespace sdds
     }
     void Bus::setOutOfService()
     {
-        m_numPassenger = -1; // think i need to change this to 0
+        m_numPassenger = -1;
         m_numSeats = -1;
     }
     void Bus::drawBus(int seats, int noOfPassengers, ostream &ostr) const
@@ -94,7 +94,7 @@ namespace sdds
     {
         return bool(*this) ? (m_numPassenger * BUSPRICE) : -1.0;
     }
-    // check all unary operator function should be returning true and false
+    // unary operators
     bool Bus::operator--()
     {
         if (bool(*this) && m_numPassenger != 0)
@@ -131,7 +131,7 @@ namespace sdds
         }
         return false;
     } // postfix
-
+      // binary operators
     Bus &Bus::operator=(int value)
     {
         m_numPassenger = value;
@@ -167,7 +167,7 @@ namespace sdds
         }
         return *this;
     }
-    bool Bus::operator==(const Bus &right) const // fix this function
+    bool Bus::operator==(const Bus &right) const
     {
         if (bool(*this) && bool(right))
         {
