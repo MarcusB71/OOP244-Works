@@ -11,7 +11,7 @@ namespace sdds
         int m_size;
         int m_noOfEggs;
         bool m_jumboSize;
-        EggCarton &setBroken(int size, int noOfEggs);
+        EggCarton &setBroken();
         std::ostream &displayCarton(int size, int noOfEggs, bool jumboSize, std::ostream &ostr = std::cout) const;
 
     public:

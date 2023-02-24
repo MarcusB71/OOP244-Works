@@ -8,7 +8,7 @@ namespace sdds
     {
         if (size % 6 != 0 || (size < 6 || size > 36) || (noOfEggs < 0 || noOfEggs > size))
         {
-            setBroken(-1, -1);
+            setBroken();
         }
         else
         {
@@ -17,10 +17,10 @@ namespace sdds
             m_jumboSize = jumboSize;
         }
     }
-    EggCarton &EggCarton::setBroken(int size, int noOfEggs)
+    EggCarton &EggCarton::setBroken()
     {
-        m_size = size;
-        m_noOfEggs = noOfEggs;
+        m_size = -1;
+        m_noOfEggs = -1;
         return *this;
     }
     ostream &EggCarton::display(ostream &ostr) const
@@ -63,7 +63,7 @@ namespace sdds
         istr >> m_noOfEggs;
         if (m_size % 6 != 0 || (m_size < 6 || m_size > 36) || (m_noOfEggs < 0 || m_noOfEggs > m_size))
         {
-            setBroken(-1, -1);
+            setBroken();
         }
         return istr;
     }
@@ -112,7 +112,7 @@ namespace sdds
             m_noOfEggs++;
             if (m_noOfEggs > m_size)
             {
-                setBroken(-1, -1);
+                setBroken();
             }
         }
         return *this;
@@ -128,7 +128,7 @@ namespace sdds
         m_noOfEggs = value;
         if (m_noOfEggs > m_size)
         {
-            setBroken(-1, -1);
+            setBroken();
         }
         return *this;
     }
@@ -147,12 +147,12 @@ namespace sdds
             m_noOfEggs += value;
             if (m_noOfEggs > m_size)
             {
-                setBroken(-1, -1);
+                setBroken();
             }
         }
         return *this;
     }
-    EggCarton& EggCarton::operator+=(EggCarton& right) // maybe fix this too
+    EggCarton &EggCarton::operator+=(EggCarton &right) // maybe fix this too
     {
         if (*this)
         {
@@ -166,10 +166,10 @@ namespace sdds
         }
         return *this;
     }
-    bool EggCarton::operator==(const EggCarton& right) const // fix this function
+    bool EggCarton::operator==(const EggCarton &right) const // fix this function
     {
         double difference = double(m_jumboSize) - double(right.m_jumboSize);
-        return  !(difference >= -0.001 && difference <= 0.001);
+        return !(difference >= -0.001 && difference <= 0.001);
     }
 
     int operator+(int left, const EggCarton &right)
@@ -185,12 +185,12 @@ namespace sdds
         }
         return sum;
     }
-    ostream& operator<<(ostream& ostr, const EggCarton &right)
+    ostream &operator<<(ostream &ostr, const EggCarton &right)
     {
         right.display(ostr);
         return ostr;
     }
-    istream& operator>>(istream& istr, EggCarton &right)
+    istream &operator>>(istream &istr, EggCarton &right)
     {
         right.read(istr);
         return istr;
