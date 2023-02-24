@@ -152,7 +152,7 @@ namespace sdds
         }
         return *this;
     }
-    EggCarton &EggCarton::operator+=(EggCarton &right) // maybe fix this too
+    EggCarton &EggCarton::operator+=(EggCarton &right)
     {
         if (*this)
         {
@@ -166,7 +166,7 @@ namespace sdds
         }
         return *this;
     }
-    bool EggCarton::operator==(const EggCarton &right) const // fix this function
+    bool EggCarton::operator==(const EggCarton &right) const
     {
         double difference = double(m_jumboSize) - double(right.m_jumboSize);
         return !(difference >= -0.001 && difference <= 0.001);
