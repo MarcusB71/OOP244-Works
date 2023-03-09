@@ -57,6 +57,7 @@ namespace sdds
         {
             delete[] m_collection;
         }
+        m_collection = nullptr;
     }
     //copy constructor
     Numbers::Numbers(const Numbers& nums)
@@ -70,7 +71,10 @@ namespace sdds
         {
             strcpy(m_fileName, nums.m_fileName);
             save(m_fileName);
-            delete[] m_collection;
+            if (m_collection != nullptr)
+            {
+                delete[] m_collection;
+            }
             m_collection = nullptr;
             setEmpty();
             if (nums.m_collectionSize > 0)
@@ -93,9 +97,10 @@ namespace sdds
         double num = 0.0;
         int reads = 0;
         bool loaded = false;
-        setEmpty();
+
         // delete[] m_collection;
-        // m_collection = nullptr; 
+        m_collection = nullptr;
+
         int lines = countLines(filename);
         if (lines > 0)
         {
