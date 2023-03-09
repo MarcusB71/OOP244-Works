@@ -94,7 +94,7 @@ namespace sdds
     }
     bool Numbers::load(const char* filename) {
         double num = 0.0;
-        int reads = 0;
+        unsigned int reads = 0;
         bool loaded = false;
         // if (m_collection != nullptr)
         // {
@@ -104,7 +104,7 @@ namespace sdds
         delete[] m_collection;
         m_collection = nullptr;
 
-        int lines = countLines(filename);
+        unsigned int lines = countLines(filename);
         if (lines > 0)
         {
             m_collection = new double[countLines(filename)];
@@ -190,7 +190,7 @@ namespace sdds
         sort(m_collection, m_collectionSize);
     }
     Numbers& Numbers::operator+=(double addToList) {
-        if (m_collectionSize > 0)//bool(*this)
+        if (m_collectionSize > 0)//(*this)
         {
             double* temp = new double[m_collectionSize + 1];
             for (unsigned i = 0; i < m_collectionSize; i++)
