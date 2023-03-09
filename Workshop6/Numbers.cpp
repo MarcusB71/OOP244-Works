@@ -101,10 +101,10 @@ namespace sdds
         //     delete[] m_collection;
         // }
         setEmpty();
-        // delete[] m_collection;
+        delete[] m_collection;
         m_collection = nullptr;
 
-        int lines = (int)countLines(filename);
+        int lines = countLines(filename);
         if (lines > 0)
         {
             m_collection = new double[lines];
