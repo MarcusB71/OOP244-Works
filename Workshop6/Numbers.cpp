@@ -107,7 +107,7 @@ namespace sdds
         unsigned int lines = countLines(filename);
         if (lines > 0)
         {
-            m_collection = new double[countLines(filename)];
+            m_collection = new double[lines];
             std::ifstream file(filename);
             if (file.is_open())
             {
@@ -190,7 +190,7 @@ namespace sdds
         sort(m_collection, m_collectionSize);
     }
     Numbers& Numbers::operator+=(double addToList) {
-        if (m_collectionSize > 0)//(*this)
+        if (*this)//m_collectionSize > 0
         {
             double* temp = new double[m_collectionSize + 1];
             for (unsigned i = 0; i < m_collectionSize; i++)
@@ -206,7 +206,7 @@ namespace sdds
         return *this;
     }
     ostream& Numbers::display(ostream& ostr)const {
-        if (m_collectionSize > 0)
+        if (*this)
         {
             ostr.setf(ios::fixed); //MUST HAVE FIXED TO USE FIXED POINT NOTATION (refers to post decimal places)
             ostr.precision(2);
