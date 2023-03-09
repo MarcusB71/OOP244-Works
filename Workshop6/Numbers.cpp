@@ -107,7 +107,7 @@ namespace sdds
         int lines = countLines(filename);
         if (lines > 0)
         {
-            m_collection = new double[lines];
+            m_collection = new double[countLines(filename)];
             std::ifstream file(filename);
             if (file.is_open())
             {
