@@ -96,11 +96,15 @@ namespace sdds
         double num = 0.0;
         int reads = 0;
         bool loaded = false;
+        // if (m_collection != nullptr)
+        // {
+        //     delete[] m_collection;
+        // }
         setEmpty();
         // delete[] m_collection;
         m_collection = nullptr;
 
-        int lines = countLines(filename);
+        int lines = (int)countLines(filename);
         if (lines > 0)
         {
             m_collection = new double[lines];
