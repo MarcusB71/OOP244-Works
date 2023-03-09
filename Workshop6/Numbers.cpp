@@ -220,7 +220,7 @@ namespace sdds
             ostr << "============================================================================";
         }
         else {
-            ostr << "Empty List";
+            ostr << "Empty list";
         }
         return ostr;
     }
