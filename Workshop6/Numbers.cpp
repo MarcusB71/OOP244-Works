@@ -75,7 +75,6 @@ namespace sdds
             {
                 delete[] m_collection;
             }
-            m_collection = nullptr;
             setEmpty();
             if (nums.m_collectionSize > 0)
             {
@@ -97,7 +96,7 @@ namespace sdds
         double num = 0.0;
         int reads = 0;
         bool loaded = false;
-
+        setEmpty();
         // delete[] m_collection;
         m_collection = nullptr;
 
