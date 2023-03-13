@@ -1,0 +1,9 @@
+This workshop was quite difficult and took me a very long time. I spent a long time trying to implement the copy constructor and 
+copy assignment functions because i did not realize that these two are fairly standardized in their implmenetation. 
+Meaning, in cases where a copy constructor and copy assignment are needed, the code within them is generally very similar. 
+I spent too much time trying to figure it out myself when I should have been referencing the class material more. 
+One of the biggest problems i encountered this workshop was that I did not use strcpy in the copy assingment as it was not written
+in the instructions. While this should be fairly obvious, it is easy to miss things when there is so much unknown. This leads to 
+my memory problem. Similar to last workshop when trying to submit, i did get the outputs to match, but i had a memory problem. 
+I think there is a lot of unknown factors with memory problems that causes me to cast doubt on parts of my code that I shouldnt 
+be doubting. I need to understand memory better so that I can be confident in my coding.
