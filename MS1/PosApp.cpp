@@ -96,10 +96,10 @@ namespace sdds {
     }
     void PosApp::saveRecs() {
         cout << ">>>> Saving Data............................................................." << endl;
-        cout << "Saving data in " << m_filename;
+        cout << "Saving data in " << m_filename << endl;
     }
     void PosApp::loadRecs() {
         cout << ">>>> Loading Items..........................................................." << endl;
-        cout << "Loading data from " << m_filename;
+        cout << "Loading data from " << m_filename << endl;
     }
 }
