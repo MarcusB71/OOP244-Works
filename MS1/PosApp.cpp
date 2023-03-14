@@ -36,7 +36,7 @@ namespace sdds {
             else {
                 cin.clear();
                 cin.ignore(9999, '\n');
-                cout << "[0<=value<=5], retry : > ";
+                cout << "[0<=value<=5], retry: > ";
             }
             cin >> selection;
         }
