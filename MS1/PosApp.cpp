@@ -12,7 +12,7 @@ date: 13/03/2023
 using namespace std;
 namespace sdds {
     PosApp::PosApp(const char* filename) {
-        strcpy(m_cstring, filename);
+        strcpy(m_filename, filename);
     }
     int PosApp::menu() {
         int selection;
@@ -75,24 +75,31 @@ namespace sdds {
         }
     }
     void PosApp::addItem() {
+        cout << ">>>> Adding Item to the store................................................" << endl;
         cout << "Running addItem()" << endl;
     }
     void PosApp::removeItem() {
+        cout << ">>>> Remove Item............................................................." << endl;
         cout << "Running removeItem()" << endl;
     }
     void PosApp::stockItem() {
+        cout << ">>>> Select an item to stock................................................." << endl;
         cout << "Running stockItem()" << endl;
     }
     void PosApp::listItems() {
+        cout << ">>>> Listing Items..........................................................." << endl;
         cout << "Running listItems()" << endl;
     }
     void PosApp::POS() {
+        cout << ">>>> Starting Point of Sale.................................................." << endl;
         cout << "Running POS()" << endl;
     }
     void PosApp::saveRecs() {
-        cout << "Running saveRecs()" << endl;
+        cout << ">>>> Saving Data............................................................." << endl;
+        cout << "Saving data in " << m_filename;
     }
     void PosApp::loadRecs() {
-        cout << "Running loadRecs" << endl;
+        cout << ">>>> Loading Items..........................................................." << endl;
+        cout << "Loading data from " << m_filename;
     }
 }

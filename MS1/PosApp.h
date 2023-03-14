@@ -9,7 +9,7 @@ namespace sdds {
     class PosApp
     {
     private:
-        char m_cstring[256];
+        char m_filename[256];
 
     public:
         PosApp(const char* filename);
