@@ -1,0 +1,10 @@
+I am incredibly happy with the results of this workshop. Prior to starting my work, I thuroughly read through the notes, re-reading 
+and taking a lot of time to make sure i understood what was written. Unsurpisingly, coding this workshop went as smooth and easily 
+as i could have imagined. I had a lot of confidence while coding and very rarely got stuck. The only part I was stuck on for a while 
+was a simple mistake where I had my operator++ from the base class being called within an if statement which was problematic because 
+the pet class' operator++ had some setEmpty functionality to it. Overall, this workshop was structured very well and enjoyable to do. 
+I have learned a lot about inheritance between base and derived classes, the application of using base::identifier for when the derived 
+class has a member funtion with the same name as the base class and you want to maintain the scope within the derived class, and I 
+have reinforced my knowledge gained from previous workshops. Finally, I will say that although this workshop went smoothly, even after 
+having written it, I would find it quite difficult to code the entire thing from scratch without guidelines. I hear this is an issue 
+for many people post-school which is something i will keep in mind while learning.
