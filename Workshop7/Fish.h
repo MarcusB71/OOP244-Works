@@ -20,7 +20,7 @@ namespace sdds {
         using Pet::feed;
         void reSpawn();
         using Pet::reSpawn;
-        void operator++(int);
+        void operator++(int); // post-fix
         using Pet::operator++;
         Fish& operator=(const Fish& fish);
     };

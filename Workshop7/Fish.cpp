@@ -14,28 +14,28 @@ namespace sdds {
     }
     void Fish::feed() {
         Pet::feed();
-        if (Pet::isAlive())
+        if (isAlive())
         {
-            Pet::addCharge(COST_FEED);
+            addCharge(COST_FEED);
         }
     }
     void Fish::reSpawn() {
         Pet::reSpawn();
-        Pet::addCharge(COST_REVIVE);
+        addCharge(COST_REVIVE);
     }
     void Fish::operator++(int) {
-        if (Pet::isAlive())
+        if (isAlive())
         {
             double healthDelta = 0.0;
             healthDelta += 0.20 * (getFeeds() - 1);
-            Pet::applyHealthDelta(healthDelta);
-            Pet::operator++(1);
+            applyHealthDelta(healthDelta);
+            Pet::operator++(0);
         }
     }
     Fish& Fish::operator=(const Fish& fish) {
         Pet::operator=(fish);
         double charge = (COST_BASE) * 2;
-        Pet::addCharge(charge);
+        addCharge(charge);
         return *this;
     }
     ostream& operator<<(ostream& ostr, Fish& RFish) {

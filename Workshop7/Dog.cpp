@@ -9,7 +9,6 @@ date: 16/03/2023
 #include <iostream>
 using namespace std;
 namespace sdds {
-
     Dog::Dog(const char* name, int age):Pet(name, age, COST_BASE) {
         m_numWalks = 0;
     }
@@ -21,38 +20,43 @@ namespace sdds {
             healthDelta += 0.10 * (getFeeds() - 2);
             healthDelta += 0.10 * (getGrooms() - 1);
             healthDelta += 0.20 * (m_numWalks - 2);
-            Pet::applyHealthDelta(healthDelta);
-            Pet::operator++(1);
+            applyHealthDelta(healthDelta);
         }
+        Pet::operator++(0);
+        m_numWalks = 0;
     }
     Dog& Dog::operator=(const Dog& dog) {
         Pet::operator=(dog);
         m_numWalks = dog.m_numWalks;
         double charge = (COST_BASE) * 2;
-        Pet::addCharge(charge);
+        addCharge(charge);
         return *this;
     }
     ostream& operator<<(ostream& ostr, Dog& RDog) {
         cout << "** Generic Dog **" << endl;
+        cout << "   Walks: " << RDog.getWalks() << endl;
         RDog.outputData(ostr);
         return ostr;
     }
     void Dog::feed() {
         Pet::feed();
-        if (Pet::isAlive())
+        if (isAlive())
         {
-            Pet::addCharge(COST_FEED);
+            addCharge(COST_FEED);
         }
     }
     void Dog::walk() {
-        if (Pet::isAlive())
+        if (isAlive())
         {
             m_numWalks++;
         }
     }
     void Dog::reSpawn() {
         Pet::reSpawn();
-        Pet::addCharge(COST_REVIVE);
+        addCharge(COST_REVIVE);
         m_numWalks = 0;
+    }
+    int Dog::getWalks() {
+        return m_numWalks;
     }
 }

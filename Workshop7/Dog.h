@@ -16,12 +16,13 @@ namespace sdds {
         int m_numWalks;
     public:
         Dog(const char* name, int age = 0);
+        int getWalks();
         void feed();
         using Pet::feed;
         void walk();
         void reSpawn();
         using Pet::reSpawn;
-        void operator++(int);
+        void operator++(int); //post-fix
         using Pet::operator++;
         Dog& operator=(const Dog& dog);
     };
