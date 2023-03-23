@@ -6,7 +6,7 @@ namespace sdds {
     VRVideo::VRVideo():Video(), m_equipment(nullptr) {}
 
     VRVideo::VRVideo(int length, const char* name):Video(length) {
-        if (name != nullptr)
+        if (name != nullptr && length > 0)
         {
             delete[] m_equipment;
             m_equipment = new char[length + 1];
@@ -16,9 +16,11 @@ namespace sdds {
             m_equipment = nullptr;
         }
     }
-
     VRVideo::~VRVideo() {
-        delete[] m_equipment;
+        if (m_equipment != nullptr)
+        {
+            delete[] m_equipment;
+        }
     }
     void VRVideo::load(istream& istr) {
         Video::load(istr);
@@ -27,7 +29,6 @@ namespace sdds {
         istr.get(name, 50, '\n');
         m_equipment = new char[strlen(name) + 1];
         strcpy(m_equipment, name);
-
     }
     ostream& VRVideo::play(ostream& ostr)const {
         if (m_equipment != nullptr)
