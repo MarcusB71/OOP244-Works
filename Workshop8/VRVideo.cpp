@@ -5,7 +5,7 @@ using namespace std;
 namespace sdds {
     VRVideo::VRVideo():Video(), m_equipment(nullptr) {}
 
-    VRVideo::VRVideo(int length, const char* name):Video(length) {
+    VRVideo::VRVideo(int length, const char* name):Video(length), m_equipment(nullptr) {
         if (name && length > 0)
         {
             delete[] m_equipment;
