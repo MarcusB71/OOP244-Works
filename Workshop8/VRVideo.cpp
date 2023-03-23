@@ -6,7 +6,7 @@ namespace sdds {
     VRVideo::VRVideo():Video(), m_equipment(nullptr) {}
 
     VRVideo::VRVideo(int length, const char* name):Video(length) {
-        if (name != nullptr && length > 0)
+        if (name && length > 0)
         {
             delete[] m_equipment;
             m_equipment = new char[length + 1];
