@@ -1,12 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Error.h"
 #include <cstring>
 using namespace std;
 namespace sdds {
     Error::Error():m_errDesc(nullptr) {}
-    Error::Error(const char* errMsg) {
+    Error::Error(const char* errMsg):m_errDesc(nullptr) {
         if (errMsg != nullptr)
         {
-            errMsg = new char[strlen(errMsg) + 1];
+            delete[] m_errDesc;
+            m_errDesc = new char[strlen(errMsg) + 1];
             strcpy(m_errDesc, errMsg);
         }
         else {
