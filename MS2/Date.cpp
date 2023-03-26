@@ -59,22 +59,22 @@ namespace sdds {
         return days[mon] + int((mon == 1) * ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
     }
     bool Date::operator==(const Date& date) {
-        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) == uniqueDateValue(date.m_year, date.m_day, date.m_month, date.m_hour, date.m_minute);
+        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) == uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
     }
     bool Date::operator!=(const Date& date) {
-        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) != uniqueDateValue(date.m_year, date.m_day, date.m_month, date.m_hour, date.m_minute);
+        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) != uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
     }
     bool Date::operator<(const Date& date) {
-        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) < uniqueDateValue(date.m_year, date.m_day, date.m_month, date.m_hour, date.m_minute);
+        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) < uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
     }
     bool Date::operator>(const Date& date) {
-        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) > uniqueDateValue(date.m_year, date.m_day, date.m_month, date.m_hour, date.m_minute);
+        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) > uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
     }
     bool Date::operator<=(const Date& date) {
-        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) <= uniqueDateValue(date.m_year, date.m_day, date.m_month, date.m_hour, date.m_minute);
+        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) <= uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
     }
     bool Date::operator>=(const Date& date) {
-        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) >= uniqueDateValue(date.m_year, date.m_day, date.m_month, date.m_hour, date.m_minute);
+        return uniqueDateValue(m_year, m_month, m_day, m_hour, m_minute) >= uniqueDateValue(date.m_year, date.m_month, date.m_day, date.m_hour, date.m_minute);
     }
     Date& Date::dateOnly(bool dateOnly) {
         m_dateOnly = dateOnly;
