@@ -94,22 +94,36 @@ namespace sdds {
     ostream& Date::display(ostream& ostr)const {
         if (m_dateOnly)
         {
-            ostr << m_year << "/" << m_month << "/" << m_day << endl;
+            ostr.fill('0');
+            ostr << m_year << "/";
+            ostr.width(2);
+            ostr << m_month << "/";
+            ostr.width(2);
+            ostr << m_day;
         }
         else {
-            ostr << m_year << "/" << m_month << "/" << m_day << ", " << m_hour << ":" << m_minute << endl;
+            ostr.fill('0');
+            ostr << m_year << "/";
+            ostr.width(2);
+            ostr << m_month << "/";
+            ostr.width(2);
+            ostr << m_day << ", ";
+            ostr.width(2);
+            ostr << m_hour << ":";
+            ostr.width(2);
+            ostr << m_minute;
         }
         return ostr;
     }
     ostream& operator<<(ostream& ostr, const Date& date) {
         if (bool(date))
         {
+            date.display(ostr);
+        }
+        else {
             ostr << date.error() << "(";
             date.display(ostr);
             ostr << ")";
-        }
-        else {
-            date.display(ostr);
         }
         return ostr;
     }
