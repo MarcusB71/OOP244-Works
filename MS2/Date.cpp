@@ -4,16 +4,15 @@
 #include <cstring>
 using namespace std;
 namespace sdds {
-    Date::Date() {
+    Date::Date():m_dateOnly(false) {
         getSystemDate(m_year, m_month, m_day, m_hour, m_minute, m_dateOnly);
     }
-    Date::Date(int year, int month, int day):m_year(year), m_month(month), m_day(day), m_hour(0), m_minute(0), m_dateOnly(true) {
-        // getSystemDate(m_year, m_month, m_day, m_hour, m_minute, m_dateOnly);
-        m_error.clear();
+    Date::Date(int year, int month, int day):m_year(year), m_month(month), m_day(day), m_hour(0), m_minute(0), m_dateOnly(true), m_error(nullptr) {
+        // m_error.clear();
         dateValidation();
     }
-    Date::Date(int year, int month, int day, int hour, int minute, bool dateOnly):m_year(year), m_month(month), m_day(day), m_hour(hour), m_minute(minute), m_dateOnly(dateOnly) {
-        m_error.clear();
+    Date::Date(int year, int month, int day, int hour, int minute, bool dateOnly):m_year(year), m_month(month), m_day(day), m_hour(hour), m_minute(minute), m_dateOnly(false), m_error(nullptr) {
+        // m_error.clear();
         dateValidation();
     }
     void Date::dateValidation() {
@@ -102,7 +101,7 @@ namespace sdds {
         }
         return ostr;
     }
-    ostream& operator<<(ostream& ostr, Date& date) {
+    ostream& operator<<(ostream& ostr, const Date& date) {
         if (bool(date))
         {
             ostr << date.error() << "(";

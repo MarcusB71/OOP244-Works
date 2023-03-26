@@ -16,8 +16,8 @@ namespace sdds {
         Error m_error;
     public:
         Date();
-        Date(int year, int month, int day, int hour, int minute = 0, bool dateOnly = false);
         Date(int year, int month, int day);
+        Date(int year, int month, int day, int hour, int minute = 0, bool dateOnly = false);
         void dateValidation();
         void getSystemDate(int& year, int& mon, int& day, int& hour, int& min, bool dateOnly = false);
         int uniqueDateValue(int year, int mon, int day, int hour, int min);
@@ -33,12 +33,8 @@ namespace sdds {
         const Error& error()const;
         std::ostream& display(std::ostream& ostr)const;
         std::istream& read(std::istream& istr);
-
-        ~Date();
     };
     std::ostream& operator<<(std::ostream& ostr, const Date& date);
     std::istream& operator>>(std::istream& istr, Date& date);
-
-
 }
 #endif
