@@ -1,0 +1,8 @@
+By this point I have become quite comfortable with "interfaces", abstract base classes, and concrete classes. 
+It was interesting to see how overloading the insertion and extration operator on the interface allowed for me to 
+use that in the derived classes. I think the biggest problems i had this workshop were with areas that had to do 
+with delete[] and memory. I find memory to be one of the most difficult topics as i often doubt myself with it. 
+With this workshop I have learned that deleting pointers that are uninitialized can be problematic so initializing
+ pointers to nullptr in the constructors initialization area seems to be the standard practice. Overall, this 
+ workshop in combination with the previous one helped me prepare for the in class quiz very well and has made me 
+ think about object oriented programing in a new way.
