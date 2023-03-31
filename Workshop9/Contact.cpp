@@ -1,3 +1,9 @@
+/*I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Marcus Brown
+email: mbrown106@myseneca.ca
+id: 127900223
+date: 30/03/2023
+*/
 #define _CRT_SECURE_NO_WARNINGS
 #include "Contact.h"
 using namespace std;
@@ -20,28 +26,29 @@ namespace sdds {
         Person::read(istr);
         ~*this;
         m_address = dynRead(istr, ',');
-        m_city = dynRead(istr, ',');
-        char* temp = dynRead(istr, ',');
-        strCpy(m_postalCode, temp);
-        if (strLen(temp) != 2)
+        if (m_address == nullptr || *m_address == '\0')
         {
-            istr.fail();
+            istr.setstate(ios::failbit);
         }
-        char* temp2 = dynRead(istr);
-        strCpy(m_postalCode, temp2);
-        // if (strLen(temp2) != 2)
-        // {
-        //     istr.fail();
-        // }
-
-
-        // istr.getline(m_province, 100, ',');
-        // istr.getline(m_postalCode, 100, '\n');
-        // if (strLen(m_province) != 2)
-        // {
-        //     istr.setstate(ios::failbit);
-        // }
-        if (istr.fail()) ~*this;
+        m_city = dynRead(istr, ',');
+        if (m_city == nullptr || *m_city == '\0')
+        {
+            istr.setstate(ios::failbit);
+        }
+        istr.get(m_province, 4, ',');
+        istr.ignore();
+        if (m_province[2] != '\0')
+        {
+            istr.setstate(ios::failbit);
+        }
+        istr.get(m_postalCode, 8, '\n');
+        if (m_postalCode[6] != '\0')
+        {
+            istr.setstate(ios::failbit);
+        }
+        if (istr.fail()) {
+            ~(*this);
+        };
         return istr;
     }
     ostream& Contact::write(ostream& ostr)const {
@@ -51,7 +58,7 @@ namespace sdds {
             ostr << endl;
             ostr << m_address << endl;
             ostr << m_city << " " << m_province << endl;
-            ostr << m_postalCode << endl;
+            ostr << m_postalCode[0] << m_postalCode[1] << m_postalCode[2] << " " << m_postalCode[3] << m_postalCode[4] << m_postalCode[5] << endl;
         }
         return ostr;
     }
