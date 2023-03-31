@@ -2,7 +2,7 @@
 // OOP244 Workshop 9:
 // File	main.cpp
 // Version 1.0
-// Data	Winter of 2023
+// Date	Winter of 2023
 // Author	Fardad Soleimanloo
 // Description
 //
