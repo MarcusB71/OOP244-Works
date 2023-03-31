@@ -8,6 +8,7 @@ date: 30/03/2023
 #include "Contact.h"
 using namespace std;
 namespace sdds {
+    Contact::Contact():Person() {}
     Contact::Contact(const Contact& contact):Person(contact) {
         operator=(contact);
     }
@@ -47,7 +48,7 @@ namespace sdds {
             istr.setstate(ios::failbit);
         }
         if (istr.fail()) {
-            ~(*this);
+            ~*this;
         };
         return istr;
     }
@@ -58,7 +59,7 @@ namespace sdds {
             ostr << endl;
             ostr << m_address << endl;
             ostr << m_city << " " << m_province << endl;
-            ostr << m_postalCode[0] << m_postalCode[1] << m_postalCode[2] << " " << m_postalCode[3] << m_postalCode[4] << m_postalCode[5] << endl;
+            ostr << m_postalCode[0] << m_postalCode[1] << m_postalCode[2] << " " << m_postalCode[3] << m_postalCode[4] << m_postalCode[5];
         }
         return ostr;
     }

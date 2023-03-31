@@ -18,7 +18,7 @@ namespace sdds {
         char m_province[4]{ '\0' };
         char m_postalCode[8]{ '\0' };
     public:
-        Contact() = default;
+        Contact();
         ~Contact();
         Contact(const Contact& contact);
         Contact& operator=(const Contact& contact);
@@ -27,7 +27,5 @@ namespace sdds {
         operator bool()const;
         void operator~();
     };
-
-
 }
 #endif
