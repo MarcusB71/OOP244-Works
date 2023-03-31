@@ -25,7 +25,8 @@ namespace sdds {
     }
     void strCpy(char* des, const char* src) {
         while (*src) *des++ = *src++;
-        *des = *src;
+        // *des = *src;
+        *des = '\0';
     }
     void strCat(char* des, const char* src) {
         while (*des) des++;
