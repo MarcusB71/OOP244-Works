@@ -1,6 +1,13 @@
+/*I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Marcus Brown
+email: mbrown106@myseneca.ca
+id: 127900223
+date: 13/03/2023
+*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <fstream>
 #include <cstring>
+#include <iostream>
 #include "Numbers.h"
 using namespace std;
 namespace sdds
@@ -37,12 +44,14 @@ namespace sdds
     void Numbers::setEmpty()
     {
         m_collection = nullptr;
+        strcpy(m_fileName, "");
         m_collectionSize = 0;
         m_originalFlag = false;
         m_addedFlag = false;
     }
     Numbers::Numbers(const char* fileName)
     {
+        setEmpty();
         strcpy(m_fileName, fileName);
         load(fileName);
     }
@@ -100,7 +109,7 @@ namespace sdds
         // {
         //     delete[] m_collection;
         // }
-        setEmpty();
+        // setEmpty();
         delete[] m_collection;
         m_collection = nullptr;
 
@@ -129,6 +138,7 @@ namespace sdds
             loaded = true;
         }
         else {
+            delete[] m_collection; //caused mem leak issues for long time
             setEmpty();
         }
         return loaded;

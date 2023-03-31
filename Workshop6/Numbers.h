@@ -1,3 +1,9 @@
+/*I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+Name: Marcus Brown
+email: mbrown106@myseneca.ca
+id: 127900223
+date: 13/03/2023
+*/
 #ifndef SDDS_NUMBERS_H_
 #define SDDS_NUMBERS_H_
 #include <iostream>
@@ -6,7 +12,7 @@ namespace sdds
     class Numbers
     {
         double* m_collection;
-        char m_fileName[255];
+        char m_fileName[256];
         unsigned int m_collectionSize;
         bool m_originalFlag;
         bool m_addedFlag;
