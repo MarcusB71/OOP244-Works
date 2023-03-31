@@ -1,13 +1,6 @@
-/*I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
-Name: Marcus Brown
-email: mbrown106@myseneca.ca
-id: 127900223
-date: 13/03/2023
-*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <fstream>
 #include <cstring>
-#include <iostream>
 #include "Numbers.h"
 using namespace std;
 namespace sdds
@@ -44,14 +37,12 @@ namespace sdds
     void Numbers::setEmpty()
     {
         m_collection = nullptr;
-        strcpy(m_fileName, "");
         m_collectionSize = 0;
         m_originalFlag = false;
         m_addedFlag = false;
     }
     Numbers::Numbers(const char* fileName)
     {
-        setEmpty();
         strcpy(m_fileName, fileName);
         load(fileName);
     }
@@ -84,6 +75,7 @@ namespace sdds
             {
                 delete[] m_collection;
             }
+            m_collection = nullptr;
             setEmpty();
             if (nums.m_collectionSize > 0)
             {
@@ -103,17 +95,13 @@ namespace sdds
     }
     bool Numbers::load(const char* filename) {
         double num = 0.0;
-        unsigned int reads = 0;
+        int reads = 0;
         bool loaded = false;
-        // if (m_collection != nullptr)
-        // {
-        //     delete[] m_collection;
-        // }
-        // setEmpty();
-        delete[] m_collection;
+
+        // delete[] m_collection;
         m_collection = nullptr;
 
-        unsigned int lines = countLines(filename);
+        int lines = countLines(filename);
         if (lines > 0)
         {
             m_collection = new double[lines];
@@ -138,7 +126,7 @@ namespace sdds
             loaded = true;
         }
         else {
-            delete[] m_collection; //caused mem leak issues for long time
+            delete[] m_collection;
             setEmpty();
         }
         return loaded;
@@ -200,7 +188,7 @@ namespace sdds
         sort(m_collection, m_collectionSize);
     }
     Numbers& Numbers::operator+=(double addToList) {
-        if (*this)//m_collectionSize > 0
+        if (m_collectionSize > 0)//bool(*this)
         {
             double* temp = new double[m_collectionSize + 1];
             for (unsigned i = 0; i < m_collectionSize; i++)
@@ -216,7 +204,7 @@ namespace sdds
         return *this;
     }
     ostream& Numbers::display(ostream& ostr)const {
-        if (*this)
+        if (m_collectionSize > 0)
         {
             ostr.setf(ios::fixed); //MUST HAVE FIXED TO USE FIXED POINT NOTATION (refers to post decimal places)
             ostr.precision(2);
