@@ -10,7 +10,8 @@ Date: 2023/04/03
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my project milestones.
------------------------------------------------------------*/#ifndef SDDS_ERROR_H_
+-----------------------------------------------------------*/
+#ifndef SDDS_ERROR_H_
 #define SDDS_ERROR_H_
 #include <iostream>
 namespace sdds {

@@ -10,7 +10,8 @@ Date: 2023/04/03
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my project milestones.
------------------------------------------------------------*/#define _CRT_SECURE_NO_WARNINGS
+-----------------------------------------------------------*/
+#define _CRT_SECURE_NO_WARNINGS
 #include "Item.h"
 #include <cstring>
 using namespace std;

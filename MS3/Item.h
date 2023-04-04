@@ -10,7 +10,8 @@ Date: 2023/04/03
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my project milestones.
------------------------------------------------------------*/#ifndef SDDS_ITEM_H
+-----------------------------------------------------------*/
+#ifndef SDDS_ITEM_H
 #define SDDS_ITEM_H
 #include <iostream>
 #include "PosIO.h"
