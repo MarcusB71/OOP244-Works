@@ -21,8 +21,8 @@ namespace sdds {
         Item(const Item& item);
         virtual ~Item();
         Item& operator=(const Item& item);
-        bool operator==(const char* string);
-        bool operator>(const Item& item);
+        bool operator==(const char* string)const;
+        bool operator>(const Item& item)const;
         int operator+=(int value);
         int operator-=(int value);
         operator bool()const;

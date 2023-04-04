@@ -16,11 +16,11 @@ namespace sdds {
         m_error.clear();
     }
     Item::Item(const Item& item) {
+        setEmpty();
         operator=(item);
     }
     Item& Item::operator=(const Item& item) {
-        if (this != &item)
-        {
+        if (this != &item) {
             strcpy(m_SKU, item.m_SKU);
             if (m_name)delete[]m_name;
             m_name = new char[strlen(item.m_name) + 1];
@@ -37,10 +37,10 @@ namespace sdds {
         delete[]m_name;
         m_name = nullptr;
     }
-    bool Item::operator==(const char* string) {
+    bool Item::operator==(const char* string) const {
         return !strcmp(m_SKU, string);
     }
-    bool Item::operator>(const Item& item) {
+    bool Item::operator>(const Item& item) const {
         return strcmp(m_name, item.m_name) > 0;
     }
     int Item::operator+=(int value) {
@@ -109,6 +109,7 @@ namespace sdds {
                 ostr.setf(ios::fixed);
                 ostr.precision(2);
                 ostr << m_price << "| ";
+                ostr.unsetf(ios::fixed);
 
                 if (m_taxed)
                 {
@@ -120,7 +121,7 @@ namespace sdds {
 
                 ostr << " | ";
                 ostr.width(3);
-                ostr << m_quantity << " | ";
+                ostr << m_quantity << "| ";
 
                 ostr.width(8);
                 ostr.setf(ios::fixed);
@@ -136,12 +137,14 @@ namespace sdds {
                 ostr.setf(ios::fixed);
                 ostr.precision(2);
                 ostr << m_price << endl;
+                ostr.unsetf(ios::fixed);
                 ostr << "Price + tax: ";
                 if (m_taxed)
                 {
                     ostr.setf(ios::fixed);
                     ostr.precision(2);
                     ostr << cost() << endl;
+                    ostr.unsetf(ios::fixed);
                 }
                 else {
                     ostr << "N/A" << endl;
@@ -157,6 +160,8 @@ namespace sdds {
             cerr << m_error << endl;
         }
         else {
+            ofstr.setf(ios::fixed);
+            ofstr.precision(2);
             ofstr << itemType() << ',' << m_SKU << ',' << m_name << ',' << m_price << ',' << m_taxed << ',' << m_quantity;
         }
         return ofstr;
@@ -274,13 +279,15 @@ namespace sdds {
         ostr.width(20);
         ostr.fill(' ');
         ostr.setf(ios::left);
-        ostr << m_name << "|";
+        char name[21]{};
+        strncpy(name, m_name, 20);
+        ostr << name;
         ostr.unsetf(ios::left);
-        ostr.setf(ios::right);
-        ostr.width(7);
+        ostr << "|";
+        ostr.width(10);
         ostr.setf(ios::fixed);
         ostr.precision(2);
-        ostr << cost() << "| ";
+        ostr << cost() << "|  ";
         if (m_taxed)
         {
             ostr << "T";
@@ -288,7 +295,7 @@ namespace sdds {
         else {
             ostr << " ";
         }
-        ostr << " |" << endl;
+        ostr << "  |" << endl;
         return ostr;
     }
 }
