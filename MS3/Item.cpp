@@ -180,7 +180,7 @@ namespace sdds {
         istr.ignore(999, '\n');
         strcpy(m_SKU, sku);
 
-        cout << "Name: ";
+        cout << "Name" << endl << "> ";
         char name[200]{};
         if (m_name)delete[] m_name;
         m_name = nullptr;
@@ -193,7 +193,7 @@ namespace sdds {
         m_name = new char[strlen(name) + 1];
         strcpy(m_name, name);
 
-        cout << "Price: ";
+        cout << "Price" << endl << "> ";
         istr >> m_price;
         while (istr.fail() || m_price < 0)
         {
