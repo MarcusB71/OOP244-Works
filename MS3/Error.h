@@ -1,4 +1,16 @@
-#ifndef SDDS_ERROR_H_
+/* Citation and Sources...
+Final Project Milestone 3
+Module: Error
+Filename: Error.h
+Version 1.0
+Author	Marcus Brown
+Email: mbrown106@myseneca.ca
+Id: 127900223
+Date: 2023/04/03
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my project milestones.
+-----------------------------------------------------------*/#ifndef SDDS_ERROR_H_
 #define SDDS_ERROR_H_
 #include <iostream>
 namespace sdds {

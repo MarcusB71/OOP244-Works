@@ -1,3 +1,16 @@
+/* Citation and Sources...
+Final Project Milestone 3
+Module: PosIO
+Filename: PosIO.cpp
+Version 1.0
+Author	Marcus Brown
+Email: mbrown106@myseneca.ca
+Id: 127900223
+Date: 2023/04/03
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my project milestones.
+-----------------------------------------------------------*/
 #define _CRT_SECURE_NO_WARNINGS
 #include "PosIO.h"
 using namespace std;
