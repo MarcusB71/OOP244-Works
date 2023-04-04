@@ -287,7 +287,7 @@ namespace sdds {
         ostr.width(10);
         ostr.setf(ios::fixed);
         ostr.precision(2);
-        ostr << cost() << "|  ";
+        ostr << cost() << " |  ";
         if (m_taxed)
         {
             ostr << "T";
