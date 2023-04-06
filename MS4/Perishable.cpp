@@ -46,7 +46,7 @@ namespace sdds {
                 cout << "  " << m_date << " " << "|";
             }
             else {
-                cout << "Expiry Date: " << m_date << endl;
+                cout << "Expiry date: " << m_date << endl;
                 cout << "=============^" << endl;
             }
         }
