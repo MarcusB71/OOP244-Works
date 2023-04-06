@@ -24,7 +24,7 @@ namespace sdds {
         {
             Date temp;
             temp.dateOnly(true);
-            cout << "Expiry date(YYYY/MM/DD)" << endl;
+            cout << "Expiry date (YYYY/MM/DD)" << endl;
             cout << "> ";
             istr >> temp;
             if (temp)
