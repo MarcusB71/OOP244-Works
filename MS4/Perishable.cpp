@@ -43,7 +43,7 @@ namespace sdds {
         {
             if (m_displayFlag == POS_LIST)
             {
-                cout << " " << m_date << " " << "|";
+                cout << "  " << m_date << " " << "|";
             }
             else {
                 cout << "Expiry Date: " << m_date << endl;
