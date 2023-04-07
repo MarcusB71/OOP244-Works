@@ -1,0 +1,7 @@
+This workshop was simple with short instructions and plenty of provided code. The point was to learn how function
+templates work. It was interesting thinking about how templates can be used though i have much more to learn about 
+the potential and limitations they have. I think the hardest part about templates is understanding which member 
+functions the template type requires especially with copy constructor. My current understanding is that if the
+type is passed by value as opposed to by pointer or reference then it needs copy constructor. Additionaly const
+types do not need copy constructor though i am not sure and will ask about this in class. Overall, it was an easier
+workshop, but it got the point across.
