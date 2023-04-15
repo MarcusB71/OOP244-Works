@@ -97,8 +97,58 @@ namespace sdds {
         }
     }
     void PosApp::addItem() {
-        cout << ">>>> Adding Item to the store................................................" << endl;
-        cout << "Running addItem()" << endl;
+        printTitle("Adding Item to the store");
+        if (m_Iptr[MAX_NO_ITEMS - 1] != nullptr)
+        {
+            cout << "Inventory Full!" << endl;
+
+        }
+        else {
+            Item* temp{};
+            char itemType;
+            cout << "Is the Item perishable? (Y)es/(N)o: ";
+            cin >> itemType;
+            bool finished = false;
+            while (!finished)
+            {
+                if (itemType == 'y')
+                {
+                    temp = new Perishable();
+                    temp->read(cin);
+                    if (cin) {
+                        m_Iptr[m_nptr++] = temp;
+                        printTitle("DONE!");
+                        finished = true;
+                    }
+                    else {
+                        cin.clear();
+                        cin.ignore(9999, '\0');
+                        cout << temp;
+                        cout << ", try again..." << endl;
+                    }
+                }
+                else if (itemType == 'n') {
+                    temp = new NonPerishable();
+                    temp->read(cin);
+                    if (cin)
+                    {
+                        m_Iptr[m_nptr++] = temp;
+                        printTitle("DONE!");
+                        finished = true;
+                    }
+                    else {
+                        cin.clear();
+                        cin.ignore(9999, '\0');
+                        cout << temp;
+                        cout << ", try again..." << endl;
+
+                    }
+                }
+                else {
+                    cout << "invalid input";
+                }
+            }
+        }
     }
     void PosApp::removeItem() {
         cout << ">>>> Remove Item............................................................." << endl;
