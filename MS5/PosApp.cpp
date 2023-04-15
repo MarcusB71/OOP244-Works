@@ -94,7 +94,7 @@ namespace sdds {
     void PosApp::printTitle(const char* title) {
         cout << ">>>> ";
         cout.setf(ios::left);
-        cout.width(73);
+        cout.width(72);
         cout.fill('.');
         cout << title << endl;
         cout.unsetf(ios::left);
