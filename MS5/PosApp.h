@@ -1,3 +1,16 @@
+/* Citation and Sources...
+Final Project Milestone 5
+Module: PosApp
+Filename: PosApp.h
+Version 1.0
+Author	Marcus Brown
+Email: mbrown106@myseneca.ca
+Id: 127900223
+Date: 2023/04/15
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my project milestones.
+-----------------------------------------------------------*/
 #ifndef SDDS_POSAPP_H
 #define SDDS_POSAPP_H
 #include <iostream>
@@ -17,7 +30,7 @@ namespace sdds {
         ~PosApp();
         PosApp(const PosApp& app) = delete;
         PosApp& operator=(const PosApp& app) = delete;
-        int menu(); //displays menu and receives user choice must be valid int
+        int menu();
         void addItem();
         void removeItem();
         void stockItem();
