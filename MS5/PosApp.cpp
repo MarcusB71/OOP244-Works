@@ -181,6 +181,6 @@ namespace sdds {
         cout << totalAsset << " |" << endl;
         cout.unsetf(ios::right);
         cout << "-----------------------------------------------^--------------^" << endl;
-
+        cout << endl;
     }
 }
