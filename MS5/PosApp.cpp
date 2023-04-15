@@ -15,6 +15,14 @@ namespace sdds {
             m_Iptr[i] = nullptr;
         }
     }
+    PosApp::~PosApp() {
+        for (int i = 0; i < m_nptr; i++)
+        {
+            delete m_Iptr[i];
+            m_Iptr[i] = nullptr;
+        }
+        m_nptr = 0;
+    }
     int PosApp::menu() {
         int selection;
         cout << "The Sene-Store" << endl;
@@ -125,12 +133,14 @@ namespace sdds {
                 item = new Perishable();
                 if (item)input >> *item;
                 m_Iptr[m_nptr++] = item;
+                delete item;
             }
             if (temp == 'N')
             {
                 item = new NonPerishable();
                 if (item)input >> *item;
                 m_Iptr[m_nptr++] = item;
+                delete item;
             }
         }
     }
@@ -154,7 +164,6 @@ namespace sdds {
                     temp = m_Iptr[j];
                     m_Iptr[j] = m_Iptr[j + 1];
                     m_Iptr[j + 1] = temp;
-
                 }
             }
         }

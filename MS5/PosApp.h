@@ -14,6 +14,7 @@ namespace sdds {
         int m_nptr;
     public:
         PosApp(const char* filename = "");
+        ~PosApp();
         PosApp(const PosApp& app) = delete;
         PosApp& operator=(const PosApp& app) = delete;
         int menu(); //displays menu and receives user choice must be valid int
