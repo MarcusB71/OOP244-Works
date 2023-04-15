@@ -133,14 +133,12 @@ namespace sdds {
                 item = new Perishable();
                 if (item)input >> *item;
                 m_Iptr[m_nptr++] = item;
-                delete item;
             }
             if (temp == 'N')
             {
                 item = new NonPerishable();
                 if (item)input >> *item;
                 m_Iptr[m_nptr++] = item;
-                delete item;
             }
         }
     }
