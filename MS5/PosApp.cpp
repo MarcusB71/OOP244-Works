@@ -22,7 +22,7 @@ namespace sdds {
         cout << "2- Add item" << endl;
         cout << "3- Remove item" << endl;
         cout << "4- Stock item" << endl;
-        cout << "5- Point of Sale" << endl;
+        cout << "5- POS" << endl;
         cout << "0- exit program" << endl;
         cout << "> ";
         cin >> selection;
@@ -96,7 +96,8 @@ namespace sdds {
         cout.setf(ios::left);
         cout.width(72);
         cout.fill('.');
-        cout << title << endl;
+        cout << title;
+        cout << endl;
         cout.unsetf(ios::left);
     }
     void PosApp::loadRecs() {
@@ -178,6 +179,7 @@ namespace sdds {
         cout.fill(' ');
         cout.setf(ios::right);
         cout << totalAsset << " |" << endl;
+        cout.unsetf(ios::right);
         cout << "-----------------------------------------------^--------------^" << endl;
 
     }
