@@ -151,8 +151,18 @@ namespace sdds {
         }
     }
     void PosApp::removeItem() {
-        cout << ">>>> Remove Item............................................................." << endl;
-        cout << "Running removeItem()" << endl;
+        printTitle("Remove Item");
+        int row = selectItem();
+        cout << "Removing...." << endl;
+        m_Iptr[row - 1]->displayType(2);
+        cout << *m_Iptr[row - 1];
+        delete m_Iptr[row - 1];
+        for (int i = row - 1; i < m_nptr - 1; i++)
+        {
+            m_Iptr[i] = m_Iptr[i + 1];
+        }
+        m_nptr--;
+        printTitle("DONE!");
     }
     void PosApp::stockItem() {
         cout << ">>>> Select an item to stock................................................." << endl;
@@ -212,6 +222,62 @@ namespace sdds {
         {
             ofstr << *m_Iptr[i] << endl;
         }
+    }
+    int PosApp::selectItem() {
+        printTitle("Item Selection by row number");
+        cout << "Press <ENTER> to start....";
+        cin.ignore();
+        cin.get();
+        printTitle("Listing Items");
+        Item* temp{};
+        for (int i = 0; i < m_nptr - 1; i++)
+        {
+            for (int j = 0; j < m_nptr - i - 1; j++)
+            {
+                if (strcmp(m_Iptr[j]->getName(), m_Iptr[j + 1]->getName()) > 0)
+                {
+                    temp = m_Iptr[j];
+                    m_Iptr[j] = m_Iptr[j + 1];
+                    m_Iptr[j + 1] = temp;
+                }
+            }
+        }
+        cout << " Row | SKU    | Item Name          | Price |TX |Qty |   Total | Expiry Date |" << endl;
+        cout << "-----|--------|--------------------|-------|---|----|---------|-------------|" << endl;
+        for (int i = 0; i < m_nptr; i++)
+        {
+            m_Iptr[i]->displayType(POS_LIST);
+            cout.width(4);
+            cout.fill(' ');
+            cout.setf(ios::right);
+            cout << i + 1 << " | ";
+            cout.unsetf(ios::right);
+            cout << *m_Iptr[i] << endl;
+        }
+        cout << "-----^--------^--------------------^-------^---^----^---------^-------------^" << endl;
+        bool finished = false;
+        cout << "Enter the row number: ";
+        int rowNum = 0;
+        while (!finished)
+        {
+            cin >> rowNum;
+            if (cin.fail() || rowNum < 1 || rowNum > m_nptr)
+            {
+                cin.clear();
+                cin.ignore(9999, '\n');
+                if (rowNum == 0)
+                {
+                    cout << "Invalid Integer, try again: ";
+                }
+                else {
+                    cout << "[1<=value<=" << m_nptr << "], retry: Enter the row number: ";
+                }
+            }
+            else {
+                finished = true;
+            }
+        }
+        return rowNum;
     }
     void PosApp::listItems() {
         printTitle("Listing Items");

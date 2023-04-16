@@ -35,6 +35,7 @@ namespace sdds {
         void removeItem();
         void stockItem();
         void listItems();
+        int selectItem();
         void POS();
         void saveRecs();
         void loadRecs();
