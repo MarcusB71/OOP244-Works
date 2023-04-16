@@ -165,8 +165,40 @@ namespace sdds {
         printTitle("DONE!");
     }
     void PosApp::stockItem() {
-        cout << ">>>> Select an item to stock................................................." << endl;
-        cout << "Running stockItem()" << endl;
+        printTitle("Select an item to stock");
+        int row = selectItem();
+        cout << "Selected Item:" << endl;
+        m_Iptr[row - 1]->displayType(2);
+        cout << *m_Iptr[row - 1];
+        cout << "Enter quantity to add: ";
+        bool finished = false;
+        char qtyToAdd[20];
+        bool valid = true;
+        while (!finished)
+        {
+            valid = true;
+            cin >> qtyToAdd;
+            int length = strlen(qtyToAdd);
+            for (int i = 0; i < length; i++)
+            {
+                if (!isdigit(qtyToAdd[i]) && qtyToAdd[i] != '-') {
+                    valid = false;
+                }
+            }
+            if (!valid)
+            {
+                cout << "Invalid Integer, try again: ";
+            }
+            else if (cin.fail() || atoi(qtyToAdd) < 1 || atoi(qtyToAdd) > MAX_STOCK_NUMBER - m_Iptr[row - 1]->quantity())
+            {
+                cout << "[1<=value<=" << MAX_STOCK_NUMBER - m_Iptr[row - 1]->quantity() << "], retry: Enter quantity to add: ";
+            }
+            else {
+                finished = true;
+            }
+        }
+        *m_Iptr[row - 1] += atoi(qtyToAdd);
+        printTitle("DONE!");
     }
     void PosApp::POS() {
         cout << ">>>> Starting Point of Sale.................................................." << endl;
