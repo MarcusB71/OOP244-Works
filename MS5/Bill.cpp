@@ -51,6 +51,7 @@ namespace sdds {
         ostr.precision(2);
         ostr.fill(' ');
         ostr << m_total << " |" << endl;
+        ostr.unsetf(ios::right);
         return ostr << "^---------------------------------^" << endl;
     }
 }
