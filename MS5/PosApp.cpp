@@ -229,10 +229,10 @@ namespace sdds {
                             cout << *m_Iptr[index];
                             cout << endl;
                             cout << ">>>>> Added to bill" << endl;
-                            cout << ">>>>> Total: <";
+                            cout << ">>>>> Total: ";
                             cout.setf(ios::fixed);
                             cout.precision(2);
-                            cout << m_bill.total() << ">" << endl;
+                            cout << m_bill.total() << endl;
                             cout.unsetf(ios::fixed);
                         }
                         else {
