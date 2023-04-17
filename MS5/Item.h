@@ -45,7 +45,8 @@ namespace sdds {
         virtual char itemType()const = 0;
         Item& displayType(int type);
         Item& clear();
-        const char* getName();
+        const char* getName()const;
+        const char* getSKU()const;
         std::ostream& write(std::ostream& ostr)const;
         std::ofstream& save(std::ofstream& ofstr)const;
         std::istream& read(std::istream& istr);

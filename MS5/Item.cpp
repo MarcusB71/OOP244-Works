@@ -101,8 +101,11 @@ namespace sdds {
         m_error.clear();
         return *this;
     }
-    const char* Item::getName() {
+    const char* Item::getName()const {
         return m_name;
+    }
+    const char* Item::getSKU()const {
+        return m_SKU;
     }
     ostream& Item::write(ostream& ostr)const {
         if (m_error)
