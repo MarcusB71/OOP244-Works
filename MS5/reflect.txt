@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone 5.4
+Final Project Milestone 5.5
 Version 1.0
 Author	Marcus Brown
 Email: mbrown106@myseneca.ca
@@ -9,3 +9,13 @@ Date: 2023/04/16
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my project milestones.
 -----------------------------------------------------------*/
+I have learned a lot about object oriented programming by completing this project. It was interesting to see how 
+the application developed throughout the milestones. Especially in milestone 5 where it all came together. 
+The early milestones set the foundation for the project by using polymorphic techniques such as inclusion where 
+virtual functions were used to create a hierarchy of items starting from an interface to the items class and then
+to the Perishable and NonPerishable classes. This polymorphism added to the capabilities of the program in much 
+fewer lines of code than it otherwise would be. Similarly, the overloading of operators throughout this hierarchy
+made the coding process much less tedious albeit a bit more confusing. I also have a much better understanding of
+working with pointers and managing user inputs after completing this project. Finally, I am happy to have 
+completed the project, but I am stil a few more projects away from feeling confident that I would be able to 
+reproduce a similar product without as detailed of a guideline as was provided for this one.
