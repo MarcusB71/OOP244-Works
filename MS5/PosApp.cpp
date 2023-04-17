@@ -201,8 +201,67 @@ namespace sdds {
         printTitle("DONE!");
     }
     void PosApp::POS() {
-        cout << ">>>> Starting Point of Sale.................................................." << endl;
-        cout << "Running POS()" << endl;
+        printTitle("Starting Point of Sale");
+        bool finished = false;
+        char SKU[MAX_SKU_LEN + 1];
+        int index = 0;
+        cin.ignore();
+        while (!finished)
+        {
+            cout << "Enter SKU or <ENTER> only to end sale..." << endl;
+            cout << "> ";
+            cin.getline(SKU, MAX_SKU_LEN + 1);
+            if (SKU[0] == '\0')
+            {
+                finished = true;
+            }
+            else {
+                if (SKU != nullptr && !cin.fail())
+                {
+                    index = search(atoi(SKU));
+                    if (index > 0)
+                    {
+                        if (m_Iptr[index]->quantity() > 0)
+                        {
+                            *m_Iptr[index] -= 1;
+                            m_bill.add(m_Iptr[index]);
+                            m_Iptr[index]->displayType(2);
+                            cout << *m_Iptr[index];
+                            cout << endl;
+                            cout << ">>>>> Added to bill" << endl;
+                            cout << ">>>>> Total: <";
+                            cout.setf(ios::fixed);
+                            cout.precision(2);
+                            cout << m_bill.total() << ">" << endl;
+                            cout.unsetf(ios::fixed);
+                        }
+                        else {
+                            cout << "Item out of stock" << endl;
+                            m_Iptr[index]->clear();
+                        }
+                    }
+                    else {
+                        cout << "!!!!! Item Not Found !!!!!" << endl;
+                    }
+                }
+                else {
+                    cin.clear();
+                    cin.ignore(9999, '\n');
+                }
+            }
+        }
+        m_bill.print(cout);
+    }
+    int PosApp::search(int sku) {
+        int index = -1;
+        for (int i = 0; i < m_nptr; i++)
+        {
+            if (atoi(m_Iptr[i]->getSKU()) == sku)
+            {
+                index = i;
+            }
+        }
+        return index;
     }
     void PosApp::printTitle(const char* title) {
         cout << ">>>> ";

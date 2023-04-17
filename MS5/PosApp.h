@@ -18,6 +18,7 @@ that my professor provided to complete my project milestones.
 #include "Item.h"
 #include "Perishable.h"
 #include "NonPerishable.h"
+#include "Bill.h"
 #include <fstream>
 namespace sdds {
     class PosApp {
@@ -25,6 +26,7 @@ namespace sdds {
         char m_filename[129];
         Item* m_Iptr[MAX_NO_ITEMS];
         int m_nptr;
+        Bill m_bill;
     public:
         PosApp(const char* filename = "");
         ~PosApp();
@@ -41,6 +43,7 @@ namespace sdds {
         void loadRecs();
         void run();
         void printTitle(const char* title);
+        int search(int sku);
     };
 
 }
